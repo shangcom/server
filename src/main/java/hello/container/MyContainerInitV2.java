@@ -6,6 +6,14 @@ import jakarta.servlet.annotation.HandlesTypes;
 
 import java.util.Set;
 
+/**
+ * 현재 run configuration에서 톰캣을 servlet container으로 지정했음.
+ * 톰캣 서버를 실행하면, 톰캣이 서블릿 컨테이너로 작동함.
+ * 톰캣은 ServletContainerInitializer의 onStartup()를 호출하여 애플리케이션의 초기 설정을 수행하고,
+ * 서블릿과 필터를 등록한다.
+ * 톰캣이 실행되고 나면, 클라이언트의 HTTP 요청이 톰캣으로 전달되고,
+ * 톰캣은 이를 해당 서블릿이나 스프링 MVC의 DispatcherServlet에 전달하여 요청을 처리한다.
+ */
 /*
 @HandlesTypes(Xxx.class)
 일반적으로 인터페이스나 추상 클래스를 지정하여, 이를 구현하거나 상속한 모든 클래스를 찾아서
