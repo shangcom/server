@@ -1,4 +1,4 @@
-package hello.hello.servlet;
+package hello.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-/**
+/*
  * http://localhost:8080/test
  */
 @WebServlet(urlPatterns = "/test")
