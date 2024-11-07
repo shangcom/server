@@ -2,7 +2,6 @@ package hello.container;
 
 import hello.spring.HelloConfig;
 import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -13,11 +12,10 @@ import org.springframework.web.servlet.DispatcherServlet;
  * ServletContainerInitializer와 META-INF/services 설정이 필요하지 않다.
  * 스프링이 제공하는 SpringServletContainerInitializer가 WebApplicationInitializer 구현체를
  * 자동으로 탐색하고 실행하여, 초기화 과정을 대신 관리하기 때문.
- *
  */
 public class AppInitV3SpringMvc implements WebApplicationInitializer {
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
+    public void onStartup(ServletContext servletContext) {
         System.out.println("AppInitV3SpringMvc.onStartup");
 
         AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
