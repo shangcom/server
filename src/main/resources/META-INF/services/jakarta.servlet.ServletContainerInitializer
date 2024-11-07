@@ -1,2 +1,5 @@
+
+# ServletContainerInitializer 인터페이스를 구현한 클래스를 등록하여,
+# 서블릿 컨테이너가 애플리케이션 시작 시 이를 탐색하고 초기화 작업을 수행
 hello.container.MyContainerInitV1
 hello.container.MyContainerInitV2

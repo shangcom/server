@@ -9,8 +9,10 @@ import java.util.Set;
 /**
  * 현재 run configuration에서 톰캣을 servlet container으로 지정했음.
  * 톰캣 서버를 실행하면, 톰캣이 서블릿 컨테이너로 작동함.
- * 톰캣은 ServletContainerInitializer의 onStartup()를 호출하여 애플리케이션의 초기 설정을 수행하고,
- * 서블릿과 필터를 등록한다.
+ * 서블릿 컨테이너는 META-INF/services/jakarta.servlet.ServletContainerInitializer 파일을 스캔하여,
+ * 해당 파일에 등록된 ServletContainerInitializer 구현 클래스의 인스턴스를 자동으로 생성, 초기화 작업에 사용한다.
+ * 구현체 각각의 onStartup()를 호출하여 애플리케이션의 초기 설정을 수행하고, 서블릿과 필터를 등록한다.
+ * 여기까지 완료되면 ServletContainerInitializer 구현 인스턴스의 역할은 종료.
  * 톰캣이 실행되고 나면, 클라이언트의 HTTP 요청이 톰캣으로 전달되고,
  * 톰캣은 이를 해당 서블릿이나 스프링 MVC의 DispatcherServlet에 전달하여 요청을 처리한다.
  */
